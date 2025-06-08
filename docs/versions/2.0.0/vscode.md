@@ -1,3 +1,7 @@
+---
+tags:
+  - stable
+---
 # Visual Studio Code
 
 [Visual Studio Code](https://code.visualstudio.com/) is an excellent code editor from Microsoft.

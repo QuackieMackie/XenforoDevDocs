@@ -1,3 +1,7 @@
+---
+tags:
+  - stable
+---
 # Managing the schema
 
 We've taken a look at some of the new approaches available for interacting with data. Of course there are specific circumstances where interacting with the database directly may be necessary.

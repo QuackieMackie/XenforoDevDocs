@@ -9,3 +9,18 @@
         <title>{{ config.site_name }} | XenForo</title>
     {% endif %}
 {% endblock %}
+
+{% block content %}
+    {% if "development" in page.meta.tags %}
+        <div class="admonition warning">
+            <p class="admonition-title">Version Warning</p>
+            <p>This documentation is in <strong>development</strong>.</p>
+        </div>
+    {% elif "stable" in page.meta.tags %}
+        <div class="admonition note">
+            <p class="admonition-title">Version Notes</p>
+            <p>This page is <strong>stable</strong>, indicating that its content is finalized for the current release and no further changes are anticipated unless bugs or errors are found.</p>
+        </div>
+    {% endif %}
+{{ super() }}
+{% endblock %}

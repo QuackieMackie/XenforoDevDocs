@@ -6,27 +6,31 @@ copyright: <a href="https://xenforo.com/" target="_blank">Developer documentatio
 
 nav:
   - Overview: index.md
-  - Site Administrators (or common):
-      - Template syntax: template-syntax.md
-      - REST API: rest-api.md
-  - Developers:
-      - Add-on structure: add-on-structure.md
-      - Development tools: development-tools.md
-      - General concepts: general-concepts.md
-      - Routing basics: routing-basics.md
-      - Controller basics: controller-basics.md
-      - Entities, finders, and repositories: entities-finders-repositories.md
-      - Criteria: criteria.md
-      - Managing the schema: managing-the-schema.md
-      - Let's build an add-on: lets-build-an-add-on.md
-  - Designers:
-      - Designing styles: designing-styles.md
-      - Template syntax: template-syntax.md
-  - Appendix(es):
-      - macOS Dev Environment: macos-dev.md
-      - Linux Dev Environment: linux-dev.md
-      - Windows Dev Environment: windows-dev.md
-      - Visual Studio Code and Xdebug: vscode.md
+  - Version 2.3.6:
+    - Overview: versions/2.3.6/index.md
+  - Version 2.0.0:
+    - Overview: versions/2.0.0/index.md
+    - Site Administrators (or common):
+      - Template syntax: versions/2.0.0/template-syntax.md
+      - REST API: versions/2.0.0/rest-api.md
+    - Developers:
+      - Add-on structure: versions/2.0.0/add-on-structure.md
+      - Development tools: versions/2.0.0/development-tools.md
+      - General concepts: versions/2.0.0/general-concepts.md
+      - Routing basics: versions/2.0.0/routing-basics.md
+      - Controller basics: versions/2.0.0/controller-basics.md
+      - Entities, finders, and repositories: versions/2.0.0/entities-finders-repositories.md
+      - Criteria: versions/2.0.0/criteria.md
+      - Managing the schema: versions/2.0.0/managing-the-schema.md
+      - Let's build an add-on: versions/2.0.0/lets-build-an-add-on.md
+    - Designers:
+      - Designing styles: versions/2.0.0/designing-styles.md
+      - Template syntax: versions/2.0.0/template-syntax.md
+    - Appendix(es):
+      - macOS Dev Environment: versions/2.0.0/macos-dev.md
+      - Linux Dev Environment: versions/2.0.0/linux-dev.md
+      - Windows Dev Environment: versions/2.0.0/windows-dev.md
+      - Visual Studio Code and Xdebug: versions/2.0.0/vscode.md
 
 theme:
   name: material
@@ -94,3 +98,12 @@ edit_uri: edit/main/docs/
 
 extra:
   generator: false
+  version_info:
+    current: "2.0.0"
+    versions:
+      "2.3.6":
+        name: "2.3.6"
+        url: "/versions/2.3.6/"
+      "2.0.0":
+        name: "2.0.0"
+        url: "/versions/2.0.0/"

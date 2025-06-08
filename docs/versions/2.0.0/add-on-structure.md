@@ -1,3 +1,7 @@
+---
+tags:
+  - stable
+---
 # Add-on structure
 
 In previous versions of XF, there were very few standards and conventions surrounding add-on development. We have done
@@ -67,7 +71,7 @@ add-on and display information about it in the Admin CP. At minimum, your `addon
 ```json title="addon.json"
 {
     "title": "My Add-on by Some Company",
-    "version_string": "2.0.0",
+    "version_string": "2.3.6",
     "version_id": 2000070,
     "dev": "Some Company"
 }
@@ -104,7 +108,7 @@ Here's an example snippet:
 ```json title="addon.json"
 ...
   "require": {
-      "XF": [2000010, "XenForo 2.0.0+"],
+      "XF": [2000010, "XenForo 2.3.6+"],
       "php": ["5.4.0", "PHP 5.4.0+"],
       "php-ext/json": ["*", "JSON extension"]
   }

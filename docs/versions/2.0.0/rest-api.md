@@ -1,3 +1,7 @@
+---
+tags:
+  - stable
+---
 # REST API
 
 In XenForo 2.1, a REST API was added. This allows you to programmatically interact with many areas of a XenForo installation.

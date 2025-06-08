@@ -1,3 +1,7 @@
+---
+tags:
+  - stable
+---
 # Linux development environment with concurrent PHP versions
 
 To get the most out of the XenForo framework, you'll want to have a local webserver capable of running XenForo, along with capable debugger and a code editor that understands the code and can help you get around it.
@@ -40,7 +44,7 @@ sudo add-apt-repository "deb [arch=amd64] https://deb.tableplus.com/debian table
 wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
 echo "deb https://artifacts.elastic.co/packages/7.x/apt stable main" | sudo tee /etc/apt/sources.list.d/elastic-7.x.list
 
-# Fetch the latest version info and upgrade existing packages
+# Fetch the 2.0.0 version info and upgrade existing packages
 sudo apt update -y
 sudo apt upgrade -y
 ```

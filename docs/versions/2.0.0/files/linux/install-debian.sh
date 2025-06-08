@@ -13,7 +13,7 @@ sudo add-apt-repository "deb [arch=amd64] https://deb.tableplus.com/debian table
 wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
 echo "deb https://artifacts.elastic.co/packages/7.x/apt stable main" | sudo tee /etc/apt/sources.list.d/elastic-7.x.list
 
-# Fetch the latest version info and upgrade existing packages
+# Fetch the 2.0.0 version info and upgrade existing packages
 sudo apt update -y
 sudo apt upgrade -y
 

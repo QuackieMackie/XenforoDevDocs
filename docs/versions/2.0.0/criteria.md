@@ -1,3 +1,7 @@
+---
+tags:
+  - stable
+---
 # Criteria
 
 When XenForo needs to test something (user/page/post...) against some **user selected** conditions (criteria), it uses the Criteria system.
