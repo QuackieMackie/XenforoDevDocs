@@ -88,7 +88,7 @@ As you can see, criterion is simply a checkbox with optional input fields inside
 - `value="criterion_1_rule"` and `value="criterion_2_rule"` are, obviously, the rules of criteria.
 
 !!! note
-    Keep in mind that `criterion_1/2_rule` in `name` attributes may not have to be criteria rules! These are just names for input containers. You can easily write `<xf:option name="foo[bar][rule]" value="criterion_rule" />` and it will work correctly. The criterion rule will be `criterion_rule`, not `bar`.
+Keep in mind that `criterion_1/2_rule` in `name` attributes may not have to be criteria rules! These are just names for input containers. You can easily write `<xf:option name="foo[bar][rule]" value="criterion_rule" />` and it will work correctly. The criterion rule will be `criterion_rule`, not `bar`.
 
 ### (Optionally) Storing selected criteria
 
@@ -490,7 +490,7 @@ Since our criterion refers to user, we will be creating a criterion which belong
 First of all, we need to add our criterion to User criteria list. Go to "Template modifications" page in ACP, select "Admin" tab and hit "Add template modification" button in the upper right corner.
 
 !!! warning
-    If there is no "Admin" tab make sure you have enabled the [development mode](development-tools.md#enabling-development-mode)!
+If there is no "Admin" tab make sure you have enabled the [development mode](development-tools.md#enabling-development-mode)!
 
 We will be modifying the `helper_criteria` template so write it to the "Template" field. In this example I will be using `likes_on_single_message` "Modification key" for this template modification.
 
@@ -609,7 +609,7 @@ Then, go to "Tools > Cron entries" and run "Update user trophies" cron by hittin
 Nice!
 
 !!! warning
-    If you are not awarded with "All for one" trophy, try to sign out, sign in and re-running "Update user trophies" cron.
+If you are not awarded with "All for one" trophy, try to sign out, sign in and re-running "Update user trophies" cron.
 
 ### Testing (notice)
 
@@ -858,11 +858,11 @@ public function actionRemove()
 ```
 
 !!! note
-    Keep in mind that we use `isMatchedPost($post)` method for XenForo versions below 2.1!
+Keep in mind that we use `isMatchedPost($post)` method for XenForo versions below 2.1!
 
 !!! warning
-    It is generally a bad practice to retrieve all entities from database at once (`$this->finder('XF:Post')->fetch();` in the code above). There could be millions of forum posts and selecting them all at once is going to be a very long process, which might end up with an error.
-    Consider using a Job system for working with dozens (100+) of database items.
+It is generally a bad practice to retrieve all entities from database at once (`$this->finder('XF:Post')->fetch();` in the code above). There could be millions of forum posts and selecting them all at once is going to be a very long process, which might end up with an error.
+Consider using a Job system for working with dozens (100+) of database items.
 
 ### Testing
 

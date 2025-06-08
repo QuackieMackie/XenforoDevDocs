@@ -78,7 +78,7 @@ The first thing to do is to create an add-on. We previously outlined how to do t
 You will now have an addon.json file for this add-on in the following location `src/addons/Demo/addon.json`.
 
 !!! note
-	Although, strictly speaking, you can place your extended classes wherever you like within your add-on directory, it is recommended to put extended classes in a directory which easily identifies a) the add-on the class belongs to b) the type of class being extended and c) the name of the class being extended. In the following examples, we are extending the public XF Member controller so we will place our extended class in the following path: `src/addons/Demo/XF/Pub/Controller/Member.php`.
+Although, strictly speaking, you can place your extended classes wherever you like within your add-on directory, it is recommended to put extended classes in a directory which easily identifies a) the add-on the class belongs to b) the type of class being extended and c) the name of the class being extended. In the following examples, we are extending the public XF Member controller so we will place our extended class in the following path: `src/addons/Demo/XF/Pub/Controller/Member.php`.
 
 The extended class needs to exist before we add the class extension to the Admin CP. So, follow the following instructions:
 

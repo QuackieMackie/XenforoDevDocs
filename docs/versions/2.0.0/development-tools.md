@@ -63,7 +63,7 @@ $c->extend('session', function(\XF\Session\Session $session)
 ```
 
 !!! warning
-    You should never apply the above code to the config of a live/production site.
+You should never apply the above code to the config of a live/production site.
 
 ## Development commands
 
@@ -103,7 +103,7 @@ php cmd.php xf-addon:bump-version [addon_id] --version-id 1020370 --version-stri
 ```
 
 !!! note
-	If your version string contains spaces, you'll need to surround it with quotes.
+If your version string contains spaces, you'll need to surround it with quotes.
 
 This command takes the add-on ID for your add-on, the new version ID and the new version string. This enables you to bump the version of your add-on in a single step, without having to perform upgrades and rebuilds yourself. The options above are optional, and if they are not provided you will be prompted for them. If you only specify the version ID, we will try and infer the correct version string from that automatically if it matches our [Recommended version ID format](add-on-structure.md#recommended-version-id-format). Once the command completes, it updates the `addon.json` file automatically and the database with the correct version details.
 
@@ -198,9 +198,9 @@ To use any of these commands, you must have [development mode](#enabling-develop
 `config.php` file.
 
 !!! warning
-	Both of the following commands can potentially cause data loss if there is a situation whereby the database and `_output`
-	directory become out of sync. It is always recommended to use a VCS (Version Control System) such as
-	[GitHub](https://github.com) to mitigate the impact of such mistakes.
+Both of the following commands can potentially cause data loss if there is a situation whereby the database and `_output`
+directory become out of sync. It is always recommended to use a VCS (Version Control System) such as
+[GitHub](https://github.com) to mitigate the impact of such mistakes.
 
 ### Import development output
 

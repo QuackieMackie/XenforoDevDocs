@@ -15,7 +15,7 @@ This document and its accompanying video will help you to get started on a Macin
 As a bonus, this approach will allow you to run **multiple versions of PHP _at the same time_**, so you could run instances of XenForo 1.5 on PHP 5.6, XenForo 2.1 on PHP 7.4 and XenForo 2.2 on PHP 8.0 if you wanted to, **without** having to manually switch the PHP version whenever you want to access a particular version. More on that later.
 
 !!! note
-	You must be logged into macOS with a user account with administrative privileges in order to complete the steps in this document.
+You must be logged into macOS with a user account with administrative privileges in order to complete the steps in this document.
 
 ## Homebrew
 
@@ -42,7 +42,7 @@ sudo xcode-select --install;
 This will prompt you for your password on the command line, and will then open an installation window that will allow you to download and install the tools.
 
 !!! note
-	You should run this command again whenever you install a macOS update, because *sometimes* your Mac will not retain the command line tools through the update process.
+You should run this command again whenever you install a macOS update, because *sometimes* your Mac will not retain the command line tools through the update process.
 
 ### Installing Homebrew
 
@@ -55,7 +55,7 @@ In your terminal window, enter the following command:
 Watch the output and confirm as necessary.
 
 !!! note
-    Homebrew is installed in either `/usr/local`, for macOS Intel, or `/opt/homebrew`, for Apple Silicon. If your Mac uses Apple Silicon, the commands given throughout the rest of this tutorial will need to be substituted to use the correct path.
+Homebrew is installed in either `/usr/local`, for macOS Intel, or `/opt/homebrew`, for Apple Silicon. If your Mac uses Apple Silicon, the commands given throughout the rest of this tutorial will need to be substituted to use the correct path.
 
 ## Installing Homebrew packages
 
@@ -102,7 +102,7 @@ printf "\n" | pecl install imagick;
 Again, this will take a few minutes to download and install all the necessary software.
 
 !!! note
-	At the time of writing, ImageMagick does not work properly with PHP 8, but I've left the command in place as this may have changed by the time you are running the commands. If the `pecl install imagick` command fails for PHP 8, you can [manually build the imagick extension](#build-imagick-manually).
+At the time of writing, ImageMagick does not work properly with PHP 8, but I've left the command in place as this may have changed by the time you are running the commands. If the `pecl install imagick` command fails for PHP 8, you can [manually build the imagick extension](#build-imagick-manually).
 
 ![Screenshot: macOS running XenForo, being debugged by Xdebug with Visual Studio Code](files/images/macos-debugging.jpg)
 
@@ -111,7 +111,7 @@ Again, this will take a few minutes to download and install all the necessary so
 As far as possible, we are going to try to minimise the amount of changes we make to the default configuration files for each software component, and instead have the server look at additional configuration files with our own specific instructions in them.
 
 !!! note
-	The configurations I am showing here contain my own macOS username, `kier`, but in each instance you will need to replace `kier` with your own username. If you are not sure what your Mac username is, use the command `whoami` in a Terminal window.
+The configurations I am showing here contain my own macOS username, `kier`, but in each instance you will need to replace `kier` with your own username. If you are not sure what your Mac username is, use the command `whoami` in a Terminal window.
 
 ### MariaDB
 
@@ -185,7 +185,7 @@ LoadModule proxy_fcgi_module lib/httpd/modules/mod_proxy_fcgi.so
 ```
 
 !!! note
-	Assuming that you change the three instances of `kier` to your own username, this configuration will expect to serve your web files out of a `www` directory in your `Documents` folder. You will need to create this directory, or change both instances of the path in the configuration if you want to serve from another directory.
+Assuming that you change the three instances of `kier` to your own username, this configuration will expect to serve your web files out of a `www` directory in your `Documents` folder. You will need to create this directory, or change both instances of the path in the configuration if you want to serve from another directory.
 
 ### PHP
 
@@ -244,7 +244,7 @@ extension = "imagick.so"
 ```
 
 !!! warning
-	At the time of writing, `pecl install imagick` does not work properly with PHP 8. If you receive errors when trying to run this command, and you don't want to [build the imagick extension manually](#build-imagick-manually), then you will need to comment-out the `extension = "imagick.so"` line from the PHP 8 php-dev.ini, by adding a leading semi-colon.
+At the time of writing, `pecl install imagick` does not work properly with PHP 8. If you receive errors when trying to run this command, and you don't want to [build the imagick extension manually](#build-imagick-manually), then you will need to comment-out the `extension = "imagick.so"` line from the PHP 8 php-dev.ini, by adding a leading semi-colon.
 
 ---
 
@@ -297,14 +297,14 @@ The configuration we built [above](#apache) will default the server to use PHP 8
 In your `Documents/www` folder, create the following tree of folders and files (or download [this zip](files/info.zip), which contains the same contents):
 
 - Documents
-  - www
-    - info
-      - php5.6
-        - info.php
-      - php7.4
-        - info.php
-      - php8.0
-        - info.php
+    - www
+        - info
+            - php5.6
+                - info.php
+            - php7.4
+                - info.php
+            - php8.0
+                - info.php
 
 In each of these `index.php` files, add the following contents:
 
@@ -317,7 +317,7 @@ phpinfo();
 If you visit any of these locations using your browser, you will see **PHP 8.0** reported as the version in use.
 
 !!! note
-	Because we placed the `www` directory inside your `Documents` folder, which gives some advantages like potentially automatically backing-up your www folder to iCloud, it will also cause some slightly irritating permission prompts when Apache and each version of PHP first tries to access the www directory. Just watch for the prompts and confirm them when they appear.
+Because we placed the `www` directory inside your `Documents` folder, which gives some advantages like potentially automatically backing-up your www folder to iCloud, it will also cause some slightly irritating permission prompts when Apache and each version of PHP first tries to access the www directory. Just watch for the prompts and confirm them when they appear.
 
 Next, create a `.htaccess` file in each php version directory alongside the `info.php` file, and add the following contents:
 
@@ -354,7 +354,7 @@ You can now liberally sprinkle these .htaccess files across your `www` directory
 ![Screenshot: Three versions of PHP running concurrently through the Apache webserver](files/images/macos-php-versions.png)
 
 !!! note
-	The `.htaccess` files within the [downloadable zip](files/info.zip) have the `SetHandler` directive commented-out, you will need to remove the leading `#` from that line before the directive will operate.
+The `.htaccess` files within the [downloadable zip](files/info.zip) have the `SetHandler` directive commented-out, you will need to remove the leading `#` from that line before the directive will operate.
 
 ## IDE, debugging and DB manager
 

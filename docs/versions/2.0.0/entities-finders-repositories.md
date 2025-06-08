@@ -140,8 +140,8 @@ $users = $finder->order('message_count', 'DESC')->limit(10);
 ```
 
 !!! note
-    Now is probably a good time to mention that finder methods can mostly be called in any order. For example: `$threads = $finder->limit(10)->where('thread_id', '>', 123)->order('post_date')->with('User')->fetch();`
-    Although if you wrote a MySQL query in that order you'd certainly encounter some syntax issues, the Finder system will still build it all in the correct order and the above code, although odd looking and probably not recommended, is perfectly valid.
+Now is probably a good time to mention that finder methods can mostly be called in any order. For example: `$threads = $finder->limit(10)->where('thread_id', '>', 123)->order('post_date')->with('User')->fetch();`
+Although if you wrote a MySQL query in that order you'd certainly encounter some syntax issues, the Finder system will still build it all in the correct order and the above code, although odd looking and probably not recommended, is perfectly valid.
 
 As with a standard MySQL query, it is possible to order a result set on multiple columns. To do that, you can just call the order method again. It's also possible to pass multiple order clauses into the order method using an array.
 

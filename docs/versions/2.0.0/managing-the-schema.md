@@ -28,7 +28,7 @@ $username = $user['username'];
 ```
 
 !!! warning
-    Database queries written directly and passed to the database adapter are not automatically "safe". They pose a risk of a SQL injection vulnerability if user input is not sanitised and not passed into the query without being prepared. The way to do that properly is using prepared statements, like in the example above. Parameters are represented in the query itself using the `?` placeholder. These placeholders are then replaced with the values in the next argument after they have been appropriately escaped. If you have the need to use more than a single parameter, that should be passed into the fetch type method as an array. Should the need arise, you can escape or quote values directly using `$db->quote($value)`.
+Database queries written directly and passed to the database adapter are not automatically "safe". They pose a risk of a SQL injection vulnerability if user input is not sanitised and not passed into the query without being prepared. The way to do that properly is using prepared statements, like in the example above. Parameters are represented in the query itself using the `?` placeholder. These placeholders are then replaced with the values in the next argument after they have been appropriately escaped. If you have the need to use more than a single parameter, that should be passed into the fetch type method as an array. Should the need arise, you can escape or quote values directly using `$db->quote($value)`.
 
     You can find more information about prepared statements [here](http://php.net/manual/en/mysqli.quickstart.prepared-statements.php).
 
@@ -56,7 +56,7 @@ $users = $db->fetchAllKeyed('SELECT * FROM xf_user LIMIT 10', 'user_id');
 Both of these methods will return an array of arrays that represent each user record. The difference between the `fetchAll` and `fetchAllKeyed` methods is that the returned array will be keyed differently. With `fetchAll` the array will be keyed with numerically consecutive integers. With `fetchAllKeyed` the array will be keyed by the name of the field named in the second argument.
 
 !!! note
-    If you are using `fetchAllKeyed` note that the second argument is the field to key the array by, but the **third** argument is where you pass in the param values to match the `?` placeholders.
+If you are using `fetchAllKeyed` note that the second argument is the field to key the array by, but the **third** argument is where you pass in the param values to match the `?` placeholders.
 
 There are some other fetch type methods available including `fetchAllColumn` for grabbing an array of a specific column's values from all returned rows:
 
@@ -127,7 +127,7 @@ $sm->createTable('xf_some_table', function(\XF\Db\Schema\Create $table)
 ```
 
 !!! warning
-	When you alter the existing XenForo tables, or create your own tables, you **MUST** specify a default value otherwise you will encounter problems when querying the table.
+When you alter the existing XenForo tables, or create your own tables, you **MUST** specify a default value otherwise you will encounter problems when querying the table.
 
 Both of these examples produce the exact same query as their more direct counterparts above. Though you might notice that some things are (deliberately) missing. For example, none of the examples specify a length for the `int` fields. This is simply because by omitting that, MySQL will provide it with a default, which is 10 for unsigned integers. Speaking of which, we also don't specify that the `some_id` column is unsigned. Using unsigned integers within XF is by far the most common use case, so it is automatically added. If you genuinely need the ability to support negative integers, you can reverse that with the `->unsigned(false)` method. Another omission is the lack of defining `NOT NULL` for everything. Again, this is applied automatically, but you can reverse that with `->nullable(true)`.
 

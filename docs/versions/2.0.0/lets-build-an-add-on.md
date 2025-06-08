@@ -17,7 +17,7 @@ php cmd.php xf-addon:create
 ```
 
 !!! example "Terminal output"
-    **Enter an ID for this add-on:** Demo/Portal
+**Enter an ID for this add-on:** Demo/Portal
 
     **Enter a title:** Demo - Portal
 
@@ -197,7 +197,7 @@ php cmd.php xf-addon:install-step Demo/Portal 3
 So far we've added a column to the `xf_forum` table, it's now time to extend the Forum entity structure. We need to do this so that the entity knows about our new column, and so that data can be read from and written to it via the entity.
 
 !!! note
-    The following steps will require [Development mode](development-tools.md#enabling-development-mode) to be enabled. Remember to set `Demo/Portal` as the `defaultAddOn` value in `config.php`.
+The following steps will require [Development mode](development-tools.md#enabling-development-mode) to be enabled. Remember to set `Demo/Portal` as the `defaultAddOn` value in `config.php`.
 
 The first step in this process is to create a "Code event listener". This can be done in the Admin CP under Development, click the "Code event listeners" link and click the "Add code event listener" button.
 
@@ -360,7 +360,7 @@ When we save the template modification later, if the contents of the find field 
 We can use the "Test" button to check the replacement is working as expected. When the test button is clicked, an overlay with the modified template will appear. If all goes well, a green area should be highlighted with the new code we want to add.
 
 !!! note
-    This is a fairly simple replacement. For more advanced matching, you can also use the "Regular expression" type. A detailed explanation of working with regular expressions is beyond the scope for this guide, but there are lots of resources online which may help.
+This is a fairly simple replacement. For more advanced matching, you can also use the "Regular expression" type. A detailed explanation of working with regular expressions is beyond the scope for this guide, but there are lots of resources online which may help.
 
 Finally, click save to save your template modification. If all has gone well, when you return to the template modifications list, you will see the log summary is displaying <span style="color: green; font-weight: 700;">1</span> / 0 / <span style="color: red;">0</span> therefore indicating that the modification successfully applied one time. An even better indicator that it has worked as planned is to go to the "Nodes" page listed under "Forums" in the Admin CP, and edit an existing forum. Our newly added template modification should now appear.
 
@@ -395,7 +395,7 @@ protected function saveTypeData(FormAction $form, \XF\Entity\Node $node, \XF\Ent
 ```
 
 !!! Warning
-    This particular method's argument list assumes that we have a `use` declaration which aliases the full `\XF\Mvc\FormAction` class to simply `FormAction`. You will therefore need to add that use declaration yourself. Add `use XF\Mvc\FormAction;` between the `namespace` and `class` lines.
+This particular method's argument list assumes that we have a `use` declaration which aliases the full `\XF\Mvc\FormAction` class to simply `FormAction`. You will therefore need to add that use declaration yourself. Add `use XF\Mvc\FormAction;` between the `namespace` and `class` lines.
 
 So, right now, we've extended that method, and our extension should be called, but right now it isn't doing anything other than calling its parent method. We now need to get the value of the input from the forum edit page and apply that to the `$data` entity (which in this case is the Forum entity).
 
@@ -1271,7 +1271,7 @@ php cmd.php xf-addon:build-release Demo/Portal
 ```
 
 !!! example "Terminal output"
-    **Performing add-on export.**
+**Performing add-on export.**
 
     **Exporting data for Demo - Portal to ../src/addons/Demo/Portal/_data.**
 

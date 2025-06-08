@@ -44,7 +44,7 @@ sudo add-apt-repository "deb [arch=amd64] https://deb.tableplus.com/debian table
 wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
 echo "deb https://artifacts.elastic.co/packages/7.x/apt stable main" | sudo tee /etc/apt/sources.list.d/elastic-7.x.list
 
-# Fetch the 2.0.0 version info and upgrade existing packages
+# Fetch the latest version info and upgrade existing packages
 sudo apt update -y
 sudo apt upgrade -y
 ```
@@ -96,7 +96,7 @@ sudo apt install mariadb-server -y
 ```
 
 !!! note
-	Given the presence of the `for` loops in this script, I'd suggest you save the contents of the box above into a script called `install.sh`, then `chmod 700 install.sh` to make it executable, and run it in a terminal.
+Given the presence of the `for` loops in this script, I'd suggest you save the contents of the box above into a script called `install.sh`, then `chmod 700 install.sh` to make it executable, and run it in a terminal.
 
 ## Configuring
 
